@@ -25,6 +25,8 @@
 function save_options() {
     var selTemp = document.getElementById('selTemplate').value;
     var unselTemp = document.getElementById('unselTemplate').value;
+    var selProt = document.getElementById('selProtocol').value;
+    var unselProt = document.getElementById('unselProtocol').value;
     var NewStyleP = document.getElementById('useNewStyle').checked;
     var debugP = document.getElementById('debug').checked;
     var overlayP = document.getElementById('overlay').checked;
@@ -32,6 +34,8 @@ function save_options() {
     chrome.storage.sync.set({
         selectedTemplate: selTemp,
         unselectedTemplate: unselTemp,
+        selectedProtocol: selProt,
+        unselectedProtocol: unselProt,
         useNewStyleLinks: NewStyleP,
         debug: debugP,
         overlay: overlayP
@@ -52,12 +56,16 @@ function restore_options() {
     chrome.storage.sync.get({
         selectedTemplate: 'p',
         unselectedTemplate: 'L',
+        selectedProtocol: 'capture',
+        unselectedProtocol: 'capture',
         useNewStyleLinks: true,
         debug: false,
         overlay: true
     }, function(options) {
         document.getElementById('unselTemplate').value = options.unselectedTemplate;
         document.getElementById('selTemplate').value = options.selectedTemplate;
+        document.getElementById('unselProtocol').value = options.unselectedProtocol;
+        document.getElementById('selProtocol').value = options.selectedProtocol;
         document.getElementById('useNewStyle').checked = options.useNewStyleLinks;
         document.getElementById('debug').checked = options.debug;
         document.getElementById('overlay').checked = options.overlay;

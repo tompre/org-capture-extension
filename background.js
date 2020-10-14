@@ -27,6 +27,8 @@ chrome.runtime.onInstalled.addListener(function (details) {
       {
         selectedTemplate: 'p',
         unselectedTemplate: 'L',
+        selectedProtocol: 'capture',
+        unselectedProtocol: 'capture',
         useNewStyleLinks: true,
         debug: false,
         overlay: true
@@ -36,6 +38,8 @@ chrome.runtime.onInstalled.addListener(function (details) {
       {
         selectedTemplate: 'p',
         unselectedTemplate: 'L',
+        selectedProtocol: 'capture',
+        unselectedProtocol: 'capture',
         useNewStyleLinks: false,
         debug: false,
         overlay: true
